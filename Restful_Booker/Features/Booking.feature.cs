@@ -84,8 +84,8 @@ namespace Restful_Booker.Features
         [Xunit.TraitAttribute("FeatureTitle", "Booking")]
         [Xunit.TraitAttribute("Description", "create a room booking and verify the booking is successful")]
         [Xunit.TraitAttribute("Category", "create_booking")]
-        [Xunit.InlineDataAttribute("Srini", "Padala", "500", "True", "2023-11-22", "2023-11-24", "Breakfast", new string[0])]
-        public void CreateARoomBookingAndVerifyTheBookingIsSuccessful(string firstName, string lastName, string totalPrice, string depositPaid, string checkIn, string checkOut, string additionalNeeds, string[] exampleTags)
+        [Xunit.InlineDataAttribute("Srini", "Padala", "500", "True", "Breakfast", new string[0])]
+        public void CreateARoomBookingAndVerifyTheBookingIsSuccessful(string firstName, string lastName, string totalPrice, string depositPaid, string additionalNeeds, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "create_booking"};
@@ -99,8 +99,6 @@ namespace Restful_Booker.Features
             argumentsOfScenario.Add("LastName", lastName);
             argumentsOfScenario.Add("TotalPrice", totalPrice);
             argumentsOfScenario.Add("DepositPaid", depositPaid);
-            argumentsOfScenario.Add("CheckIn", checkIn);
-            argumentsOfScenario.Add("CheckOut", checkOut);
             argumentsOfScenario.Add("AdditionalNeeds", additionalNeeds);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("create a room booking and verify the booking is successful", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
@@ -118,16 +116,12 @@ this.ScenarioInitialize(scenarioInfo);
                             "lastname",
                             "totalprice",
                             "depositpaid",
-                            "checkin",
-                            "checkout",
                             "additionalneeds"});
                 table1.AddRow(new string[] {
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", totalPrice),
                             string.Format("{0}", depositPaid),
-                            string.Format("{0}", checkIn),
-                            string.Format("{0}", checkOut),
                             string.Format("{0}", additionalNeeds)});
 #line 7
 testRunner.Given("I create a room booking using the CreateBooking API", ((string)(null)), table1, "Given ");

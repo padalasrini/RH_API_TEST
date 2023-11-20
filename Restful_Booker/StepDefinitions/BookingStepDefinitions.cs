@@ -35,8 +35,8 @@ namespace Restful_Booker.StepDefinitions
                 DepositPaid = bool.Parse(bookingDetailsTable["depositpaid"]),
                 BookingDates = new BookingDates
                 {
-                    CheckIn = DateOnly.Parse(bookingDetailsTable["checkin"]),
-                    CheckOut = DateOnly.Parse(bookingDetailsTable["checkout"])
+                    CheckIn = DateOnly.FromDateTime(DateTime.Today),
+                    CheckOut = DateOnly.FromDateTime(DateTime.Today.AddDays(3))
                 },
                 AdditionalNeeds = bookingDetailsTable["additionalneeds"]
             };
